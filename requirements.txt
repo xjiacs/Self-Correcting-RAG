@@ -1,0 +1,13 @@
+numpy>=1.24
+pyyaml>=6.0
+tqdm>=4.66
+sentence-transformers>=2.2.2
+scikit-learn>=1.3
+faiss-cpu>=1.7.4
+torch>=2.0
+transformers>=4.39
+accelerate>=0.28
+sentencepiece>=0.1.99
+tiktoken>=0.6.0
+protobuf>=4.25
+gradio>=4.0

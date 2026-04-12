@@ -1,0 +1,37 @@
+
+data:
+  root: ""
+  corpus_file: "/public/home/chengtongtong/xsj/RAG/RAG_predata/data_output/hotpotqa_corpus.json"
+  records_file: "/public/home/chengtongtong/xsj/RAG/RAG_predata/data_output/hotpotqa0.json"
+
+retriever:
+  embed_model_path: "BAAI/bge-small-en-v1.5"
+  topk: 50
+  eval_k: 10
+
+retrieval:
+  use_tfidf: true
+  rrf_k: 60
+  expand_centroid: true
+
+selector:
+  token_budget: 1500
+  alpha: 0.7
+  beta: 0.3
+  redundancy_budget: 120   # scaled units
+  sim_threshold: 0.82
+  redundancy_scale: 100.0
+
+generator:
+  model_path: "/public/home/chengtongtong/xsj/models/QWEN/Qwen2.5-7B-Instruct"
+  nli_model: "roberta-large-mnli"
+  simulations: 24
+  branching: 3
+  max_depth: 3
+  entail_weight: 1.0
+  contradict_weight: -2.0
+  neutral_weight: -0.2
+  temperature: 0.7
+  top_p: 0.9
+
+output_dir: "outputs_full_mmkp_mcts"
